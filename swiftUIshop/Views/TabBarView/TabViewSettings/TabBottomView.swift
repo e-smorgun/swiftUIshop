@@ -7,12 +7,15 @@
 
 import SwiftUI
 
+// MARK: - TabBottomView
 struct TabBottomView: View {
     
+    // MARK: Properties
     let tabBarImages: [String]
     var height: CGFloat = 90
     @Binding var selectedIndex: Int
     
+    // MARK: Body
     var body: some View {
         HStack {
             Spacer()
@@ -34,6 +37,7 @@ struct TabBottomView: View {
     }
 }
 
+// MARK: - Prewiew
 struct TabBarViewPreview2: PreviewProvider {
     static var previews: some View {
         TabBarView(coordinator: AppCoordinator())

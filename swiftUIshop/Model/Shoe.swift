@@ -5,7 +5,9 @@
 //  Created by Evgeny on 25.03.23.
 //
 
+// MARK: - Shoe
 struct Shoe: Decodable {
+    // MARK: Properties
     let name: String
     let description: String
     let rating: Double

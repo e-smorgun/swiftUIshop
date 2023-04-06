@@ -19,22 +19,30 @@ import SwiftUI
 //    }
 //}
 
+// MARK: - App Entry Point
 @main
 struct swiftUIshopApp: App {
+    // MARK: - Properties
     @ObservedObject var coordinator = AppCoordinator()
 
+    // MARK: - App Scene
     var body: some Scene {
         WindowGroup {
             switch coordinator.currentScreen {
+                // MARK: - Sign In Page
             case .SignInPage:
                 SignInPageView(viewModel: SignInPageViewModel(), coordinator: coordinator)
+                // MARK: - Login View
             case .login:
                 LoginView(viewModel: LoginViewModel(), coordinator: coordinator)
+                // MARK: - Tab Bar View
             case .tabView:
                 TabBarView(coordinator: coordinator)
+                // MARK: - Shoe View
             case .shoeView:
                 ShoeView(coordinator: AppCoordinator())
                     .environmentObject(ShoeViewModel())
+                // MARK: - Default to Sign In Page
             default:
                 SignInPageView(viewModel: SignInPageViewModel(), coordinator: coordinator)
             }

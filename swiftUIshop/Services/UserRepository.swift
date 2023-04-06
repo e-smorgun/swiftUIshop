@@ -14,8 +14,10 @@ protocol UserRepository {
 }
 
 class RealmUserRepository: UserRepository {
+    // MARK: - Property
     private let realm = try! Realm()
     
+    // MARK: - Methods
     func getUser(withEmail email: String) -> Users? {
         return realm.objects(Users.self).filter("email == %@", email).first
     }

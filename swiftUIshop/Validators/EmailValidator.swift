@@ -7,6 +7,7 @@
 
 import Foundation
 
+// MARK: - Email Validator
 class EmailValidator {
     func validate(_ email: String) -> Bool {
         let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"

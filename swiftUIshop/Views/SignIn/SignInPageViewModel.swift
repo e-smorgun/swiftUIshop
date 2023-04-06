@@ -10,15 +10,18 @@ import RealmSwift
 
 class SignInPageViewModel: ObservableObject {
     
+    // MARK: Published Properties
     @Published var firstName: String = ""
     @Published var lastName: String = ""
     @Published var email: String = ""
     @Published var password: String = ""
     
+    // MARK: Private Properties
     private var cancellable: AnyCancellable?
     private let userRepository = RealmUserRepository()
     private let emailValidator = EmailValidator()
     
+    // MARK: Methods
     func register() -> Bool {
         print(firstName, lastName, email, password)
         if firstName == "" || lastName == "" || email == "" || password == "" {

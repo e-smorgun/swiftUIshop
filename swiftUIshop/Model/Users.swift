@@ -7,13 +7,16 @@
 
 import RealmSwift
 
+// MARK: - Users
 class Users: Object {
+    // MARK: Properties
     @objc dynamic var id: UUID
     @objc dynamic var firstName: String
     @objc dynamic var lastName: String
     @objc dynamic var email: String
     @objc dynamic var password: String
     
+    // MARK: Initialization
     override init() {
         self.id = UUID()
         self.firstName = ""
@@ -30,6 +33,7 @@ class Users: Object {
         self.password = password
     }
     
+    // MARK: Primary Key
     override static func primaryKey() -> String? {
         return "id"
     }

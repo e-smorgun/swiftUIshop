@@ -7,10 +7,14 @@
 
 import SwiftUI
 
+// MARK: - TabItemView
 struct TabItemView: View {
+    
+    // MARK: Properties
     let image: String
     let isSelected: Bool
     
+    // MARK: Body
     var body: some View {
         VStack {
             if isSelected == true {
@@ -35,6 +39,7 @@ struct TabItemView: View {
     }
 }
 
+// MARK: - Prewiew
 struct TabBarViewPreview3: PreviewProvider {
     static var previews: some View {
         TabBarView(coordinator: AppCoordinator())
