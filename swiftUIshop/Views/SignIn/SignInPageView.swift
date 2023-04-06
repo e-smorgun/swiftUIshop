@@ -7,12 +7,14 @@
 
 import SwiftUI
 
+// MARK: - SignInPageView
 struct SignInPageView: View {
-    
+    // MARK: - Properties
     @ObservedObject var viewModel: SignInPageViewModel
     @ObservedObject var coordinator: AppCoordinator
     @State private var isSecure: Bool = false
     
+    // MARK: - Body
     var body: some View {
         Color(red: 250/255, green: 251/255, blue: 255/255)
             .ignoresSafeArea()
@@ -36,6 +38,7 @@ struct SignInPageView: View {
             )
     }
     
+    // MARK: - Subviews
     // Welcome View
     private var signInView: some View {
         Text("Sign In")
@@ -193,6 +196,7 @@ struct SignInPageView: View {
     }
 }
 
+// MARK: - Preview
 struct SignInPageViewPreview: PreviewProvider {
     static var previews: some View {
         SignInPageView(viewModel: SignInPageViewModel(), coordinator: AppCoordinator())
